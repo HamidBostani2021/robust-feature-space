@@ -1,0 +1,75 @@
+[DEFAULT]
+project_root = C:/GitHub/Android-adversarial-robustness-with-domain-constraints-main-draft-for-ccs2023/
+database_dir = C:/GitHub/Android-adversarial-robustness-with-domain-constraints-main-draft-for-ccs2023/data/
+#project_root = Projects/Android-adversarial-robustness-with-domain-constraints/
+#database_dir = Projects/Android-adversarial-robustness-with-domain-constraints/data/
+dataset_name = drebin
+surrogate_dataset = drebin
+
+[dataset]
+dataset_root = %(database_dir)s/%(dataset_name)s/
+malware_dir_name = malicious_samples
+benware_dir_name = benign_samples
+name_list = %(database_dir)s/%(dataset_name)s/name_list.txt
+name_list_api_calls = %(database_dir)s/%(dataset_name)s/name_list_api_calls.txt
+attack_list=%(database_dir)s/%(dataset_name)s/attack.list
+
+[feature.drebin]
+# feasible choices: binary
+feature_mp = binary
+dataX = %(database_dir)s/%(dataset_name)s/X.pkl
+dataX_api_calls = %(database_dir)s/%(dataset_name)s/X_api_calls.pkl
+dataX_new = %(database_dir)s/%(dataset_name)s/X_new.pkl
+dataX_final = %(database_dir)s/%(dataset_name)s/X_final.pkl
+dataX_for_distribution_drift = %(database_dir)s/%(dataset_name)s/X_for_distribution_drift.pkl
+dataX_transformed = %(database_dir)s/%(dataset_name)s/X_transformed.pkl
+dataX_new_transformed = %(database_dir)s/%(dataset_name)s/X_new_transformed.pkl
+dataX_final_transformed = %(database_dir)s/%(dataset_name)s/X_final_transformed.pkl
+dataX_transformed_for_distribution_drift = %(database_dir)s/%(dataset_name)s/X_transformed_for_distribution_drift.pkl
+dataX_ramda = %(database_dir)s/%(dataset_name)s/X_ramda.pkl
+datay = %(database_dir)s/%(dataset_name)s/y.pkl
+datay_api_calls = %(database_dir)s/%(dataset_name)s/y_api_calls.pkl
+datay_ramda = %(database_dir)s/%(dataset_name)s/y_ramda.pkl
+vocabulary = %(database_dir)s/%(dataset_name)s/vocabulary.pkl
+vocab_info = %(database_dir)s/%(dataset_name)s/vocabulary_info.pkl
+vocabulary_api_calls = %(database_dir)s/%(dataset_name)s/vocabulary_api_calls.pkl
+vocab_info_api_calls = %(database_dir)s/%(dataset_name)s/vocabulary_info_api_calls.pkl
+vocabulary_ramda = %(database_dir)s/%(dataset_name)s/vocabulary_ramda.pkl
+vocab_info_ramda = %(database_dir)s/%(dataset_name)s/vocabulary_info_ramda.pkl
+normalizer = %(database_dir)s/%(dataset_name)s/normalizer
+
+corr_matrix = %(database_dir)s/%(dataset_name)s/corr_matrix.pkl
+corr_matrix_target = %(database_dir)s/%(dataset_name)s/corr_matrix_target.pkl
+corr_matrix_target_api_calls = %(database_dir)s/%(dataset_name)s/corr_matrix_target_api_calls.pkl
+corr_matrix_target_ramda = %(database_dir)s/%(dataset_name)s/corr_matrix_target_ramda.pkl
+corr_matrix_path = %(database_dir)s/%(dataset_name)s
+
+[attack]
+attack_root = %(database_dir)s/%(dataset_name)s/attack
+attackX = %(attack_root)s/pristine_feature.data
+pgdl1 = %(attack_root)s/adversarial_samples/pgdl1
+saltandpepper = %(attack_root)s/adversarial_samples/saltandpepper
+pointwise = %(attack_root)s/adversarial_samples/pointwise
+fgsm = %(attack_root)s/adversarial_samples/fgsm
+jsma =%(attack_root)s/adversarial_samples/jsma
+grosse = %(attack_root)s/adversarial_samples/grosse
+bca_k = %(attack_root)s/adversarial_samples/bca_k
+bga_k = %(attack_root)s/adversarial_samples/bga_k
+pgdlinf=%(attack_root)s/adversarial_samples/pgdlinf
+pgdl2=%(attack_root)s/adversarial_samples/pgdl2
+pgd_adam=%(attack_root)s/adversarial_samples/pgd_adam
+gdkde=%(attack_root)s/adversarial_samples/gdkde
+mimicry=%(attack_root)s/adversarial_samples/mimicry
+max=%(attack_root)s/adversarial_samples/max
+advX = %(attack_root)s/adv_feature.data
+adv_sample_dir = %(attack_root)s/exc_adv_samples/
+radvX = %(attack_root)s/r_adv_feature.data
+
+[experiments]
+basic_dnn = %(project_root)s/save/%(dataset_name)s/basic_dnn/
+adv_training_dnn_pgd_inf = %(project_root)s/save/%(dataset_name)s/adv_training_dnn_pgd_inf/
+adv_training_dnn_pgd_adam = %(project_root)s/save/%(dataset_name)s/adv_training_dnn_pgd_adam/
+adv_training_dnn_max = %(project_root)s/save/%(dataset_name)s/adv_training_dnn_max/
+adv_nn_ensemble_max = %(project_root)s/save/%(dataset_name)s/adv_nn_ensemble_max/
+dadv_nn_ensemble_max = %(project_root)s/save/%(dataset_name)s/dadv_nn_ensemble_max/
+surrogate_save_dir = /tmp/surrogate/
