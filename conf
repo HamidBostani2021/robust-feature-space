@@ -1,8 +1,6 @@
 [DEFAULT]
-project_root = C:/GitHub/Android-adversarial-robustness-with-domain-constraints-main-draft-for-ccs2023/
-database_dir = C:/GitHub/Android-adversarial-robustness-with-domain-constraints-main-draft-for-ccs2023/data/
-#project_root = Projects/Android-adversarial-robustness-with-domain-constraints/
-#database_dir = Projects/Android-adversarial-robustness-with-domain-constraints/data/
+project_root = ...
+database_dir = ...
 dataset_name = drebin
 surrogate_dataset = drebin
 
